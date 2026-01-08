@@ -1,107 +1,160 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kybele Accessories</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-    }
-    header {
-      background: url('https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3') center/cover no-repeat;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-    header h1 {
-      font-size: 3rem;
-      background: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .box {
-      border: 1px solid #eee;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 30px;
-      text-align: center;
-    }
-    a {
-      color: #c9a24d;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Kybele Accessories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --emerald:#0f3d2e;
+  --gold:#c9a24d;
+  --softgold:#e6c97a;
+  --white:#ffffff;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:var(--emerald);
+  color:var(--white);
+}
+
+header{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+header img{
+  max-width:220px;
+  margin-bottom:30px;
+}
+
+header h1{
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  letter-spacing:1px;
+  margin:0;
+}
+
+header p{
+  margin-top:15px;
+  font-size:1.1rem;
+  opacity:.9;
+}
+
+.divider{
+  width:80px;
+  height:2px;
+  background:var(--gold);
+  margin:30px auto;
+}
+
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+section h2{
+  font-family:'Playfair Display', serif;
+  text-align:center;
+  font-size:2.2rem;
+  margin-bottom:50px;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.card{
+  border:1px solid rgba(201,162,77,.4);
+  padding:40px 20px;
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{
+  border-color:var(--softgold);
+  transform:translateY(-4px);
+}
+
+.card h3{
+  font-family:'Playfair Display', serif;
+  margin-bottom:10px;
+}
+
+.card span{
+  font-size:.85rem;
+  letter-spacing:1px;
+  color:var(--softgold);
+}
+
+.story{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  font-size:1.05rem;
+  line-height:1.8;
+  opacity:.9;
+}
+
+footer{
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  padding:40px 20px;
+  font-size:.85rem;
+  opacity:.8;
+}
+</style>
 </head>
+
 <body>
 
 <header>
+  <!-- LOGO YOLUNU GEREKİRSE BURADA DEĞİŞTİR -->
+  <img src="logo.png" alt="Kybele Accessories Logo">
+
   <h1>Tanrıçanın Dokunuşu</h1>
+  <div class="divider"></div>
+  <p>Zamansız zarafet, güçlü detaylar</p>
 </header>
 
 <section>
-  <h2>Kybele Accessories</h2>
-  <p style="text-align:center;">
-    Zarafeti günlük hayata taşıyan, güçlü ve zamansız takılar.
-  </p>
-</section>
+  <h2>Koleksiyonlar</h2>
 
-<section>
-  <h2>Neden Kybele?</h2>
-  <div class="features">
-    <div class="box">
-      <h3>Çelik & VIP Altın Kaplama</h3>
-      <p>Ürünlerimiz paslanmaz çelikten üretilir ve VIP altın kaplamadır.</p>
-    </div>
-    <div class="box">
-      <h3>Kararma Yapmaz</h3>
-      <p>Günlük kullanıma uygundur, solma ve kararma yapmaz.</p>
-    </div>
-    <div class="box">
-      <h3>Şık & Ulaşılabilir</h3>
-      <p>Toptan temin edilen kaliteli ürünlerle uygun fiyat.</p>
-    </div>
+  <div class="categories">
+    <div class="card"><h3>Yüzük</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Kelepçe</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Bileklik</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Kolye</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Şal</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Eşarp</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Kaşmir</h3><span>YAKINDA</span></div>
+    <div class="card"><h3>Pashmina</h3><span>YAKINDA</span></div>
   </div>
 </section>
 
 <section>
-  <h2>Bizi Instagram’da Keşfet</h2>
-  <p style="text-align:center;">
-    Yeni koleksiyonlar ve güncellemeler için<br><br>
-    <a href="https://instagram.com/kybeleaccesories" target="_blank">
-      @kybeleaccesories
-    </a>
-  </p>
+  <div class="story">
+    Kybele, gücünü doğadan ve kadınların zamansız zarafetinden alan
+    tasarımlarıyla stilinize anlam katar.
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Kybele Accessories</p>
+  © 2026 Kybele Accessories
 </footer>
 
 </body>
