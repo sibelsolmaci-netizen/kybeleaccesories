@@ -121,11 +121,77 @@ footer{
   color:#d9d9d9;
   font-size:.85rem;
 }
+.topbar{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:64px;
+  background:#082a21;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  z-index:1000;
+}
+
+.menu-btn{
+  font-size:26px;
+  color:#d6b46a;
+  cursor:pointer;
+}
+
+.brand{
+  color:#d6b46a;
+  font-family:Playfair Display, serif;
+  letter-spacing:2px;
+}
+
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:80%;
+  height:100%;
+  background:#061f19;
+  padding:30px 20px;
+  transition:.3s;
+  z-index:2000;
+}
+
+.side-menu a{
+  display:block;
+  color:#d6b46a;
+  font-size:18px;
+  margin:18px 0;
+  text-decoration:none;
+}
+
+.side-menu .close{
+  color:#d6b46a;
+  font-size:22px;
+  margin-bottom:30px;
+  cursor:pointer;
+}
 </style>
 </head>
 
 <body>
+<header class="topbar">
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+  <div class="brand">KYBELE</div>
+</header>
 
+<div id="sideMenu" class="side-menu">
+  <div class="close" onclick="closeMenu()">✕</div>
+  <a href="#">Yeni</a>
+  <a href="#">Takı</a>
+  <a href="#">Saatler</a>
+  <a href="#">Aksesuarlar</a>
+  <a href="#">Şal</a>
+  <a href="#">Eşarp</a>
+  <a href="#">Kaşmir</a>
+  <a href="#">Pashmina</a>
+</div>
 <section class="hero">
   <!-- LOGO -->
   <img src="logo.png" alt="Kybele Accessories Logo"/>
@@ -189,6 +255,13 @@ footer{
 <footer>
   © 2026 Kybele Accessories
 </footer>
-
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.left="0";
+}
+function closeMenu(){
+  document.getElementById("sideMenu").style.left="-100%";
+}
+</script>
 </body>
 </html>
