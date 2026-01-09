@@ -293,6 +293,10 @@
 .whatsapp-link a:hover::after{
   width:140px;
 }
+.hero h1,
+.hero p{
+  transition: opacity .3s ease, transform .3s ease;
+}
 
   </style>
 </head>
@@ -389,6 +393,27 @@
     document.getElementById("sideMenu").classList.remove("open");
     document.getElementById("overlay").classList.remove("show");
   }
+    window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const heroTitle = document.querySelector(".hero h1");
+    const heroText = document.querySelector(".hero p");
+
+    const fadeEnd = 300;
+
+    let opacity = 1 - scrollY / fadeEnd;
+    opacity = Math.max(opacity, 0);
+
+    if(heroTitle){
+      heroTitle.style.opacity = opacity;
+      heroTitle.style.transform = `translateY(${scrollY * -0.15}px)`;
+    }
+
+    if(heroText){
+      heroText.style.opacity = opacity;
+      heroText.style.transform = `translateY(${scrollY * -0.1}px)`;
+    }
+  });
+
 </script>
 
 </body>
