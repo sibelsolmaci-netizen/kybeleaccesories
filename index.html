@@ -12,8 +12,8 @@
     :root{
       --bg:#071f18;
       --bg-2:#0b2f25;
-      --gold:#d6b46a;
-      --gold-soft:#e8d39a;
+      --gold:#d4b06a;
+      --gold-soft:#f0e3b0;
       --white:#ffffff;
     }
 
@@ -55,7 +55,7 @@
     .side-menu{
       position:fixed;
       top:0;left:-100%;
-      width:85%;
+      width:72%;
       max-width:340px;
       height:100%;
       background:var(--bg-2);
@@ -71,22 +71,28 @@
       margin-bottom:30px;
       cursor:pointer;
     }
+.side-menu h4{
+  font-family:"Playfair Display", serif;
+  color:var(--gold);
+  margin-top:32px;
+  margin-bottom:14px;
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.65;
+}
 
-    .side-menu h4{
-      font-family:"Playfair Display", serif;
-      color:var(--gold);
-      margin-top:30px;
-      margin-bottom:12px;
-      font-weight:500;
+    
     }
 
     .side-menu a{
-      display:block;
-      color:var(--gold-soft);
-      text-decoration:none;
-      font-size:16px;
-      margin:10px 0;
-    }
+  display:block;
+  color:var(--gold-soft);
+  text-decoration:none;
+  font-size:15px;
+  margin:8px 0;
+  margin-left:10px;
+}
 
     /* HERO */
     .hero{
@@ -193,14 +199,16 @@
     }
 
     /* OVERLAY */
-    .overlay{
-      position:fixed;
-      top:0;left:0;
-      width:100%;height:100%;
-      background:rgba(0,0,0,.6);
-      display:none;
-      z-index:1500;
-    }
+  .overlay{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(6px);
+  display:none;
+  z-index:1500;
+}
+
     .overlay.show{display:block}
   </style>
 </head>
