@@ -115,7 +115,7 @@
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:140px 20px 80px;
+  padding:180px 20px 80px;
   background:radial-gradient(
     circle at center,
     rgba(214,180,106,.06),
@@ -416,6 +416,7 @@ window.addEventListener("scroll", () => {
   const brand = document.querySelector(".brand-title");
   const heroTitle = document.querySelector(".hero-title");
   const heroText = document.querySelector(".hero p");
+  const header = document.querySelector("header");
 
   const fadeEnd = 320;
 
@@ -436,6 +437,9 @@ window.addEventListener("scroll", () => {
     heroText.style.opacity = opacity;
     heroText.style.transform = `translateY(${scrollY * -0.1}px)`;
   }
+  if(header){
+  header.style.opacity = Math.max(1 - scrollY / 400, 0.85);
+}
 });
 
 </script>
