@@ -237,7 +237,35 @@
 }
 
     .overlay.show{display:block}
- 
+ .instagram-link{
+  text-align:center;
+  padding:100px 20px 60px;
+}
+
+.instagram-link a{
+  font-family:"Playfair Display", serif;
+  font-size:1.1rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--gold);
+  text-decoration:none;
+  position:relative;
+}
+
+.instagram-link a::after{
+  content:"";
+  display:block;
+  width:0;
+  height:1px;
+  background:var(--gold);
+  margin:12px auto 0;
+  transition:.3s;
+}
+
+.instagram-link a:hover::after{
+  width:120px;
+}
+
   </style>
 </head>
 
@@ -308,6 +336,11 @@
     Kybele, doğadan ve kadın gücünden ilham alan,
     sessiz ama güçlü bir zarafet sunar.
   </div>
+</section>
+<section class="instagram-link">
+  <a href="https://www.instagram.com/kybeleaccesories" target="_blank">
+    Instagram’da Bizi Keşfet →
+  </a>
 </section>
 
 <footer>
