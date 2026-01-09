@@ -26,17 +26,18 @@
     }
 
     /* HEADER */
-    header{
-      position:fixed;
-      top:0;left:0;right:0;
-      height:64px;
-      display:flex;
-      align-items:center;
-      padding:0 20px;
-      background:rgba(7,31,24,.65);
-      backdrop-filter:blur(6px);
-      z-index:1000;
-    }
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:64px;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  background:rgba(7,31,24,.55);
+  backdrop-filter:blur(6px);
+  transition:opacity .3s ease, background .3s ease;
+  z-index:1000;
+}
 
     .menu-btn{
       font-size:26px;
@@ -423,7 +424,7 @@ window.addEventListener("scroll", () => {
     heroText.style.transform = `translateY(${scrollY * -0.1}px)`;
   }
   if(header){
-  header.style.opacity = Math.max(1 - scrollY / 400, 0.85);
+  header.style.opacity = Math.max(1 - scrollY / 300, 0.85);
 }
 });
 
