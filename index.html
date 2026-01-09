@@ -1,210 +1,248 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kybele Accessories</title>
+  <meta charset="UTF-8" />
+  <title>Kybele Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --emerald:#082a21;        /* DAHA KOYU ZÜMRÜT */
-  --emerald-2:#0b352b;
-  --gold:#d6b46a;           /* GOLD YAZILAR */
-  --gold-soft:#ead39a;
-  --white:#ffffff;
-}
+  <style>
+    :root{
+      --bg:#071f18;
+      --bg-2:#0b2f25;
+      --gold:#d6b46a;
+      --gold-soft:#e8d39a;
+      --white:#ffffff;
+    }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:var(--emerald);
-  color:var(--white);
-}
+    *{box-sizing:border-box;margin:0;padding:0}
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    linear-gradient(180deg, rgba(8,42,33,.85), rgba(8,42,33,.95)),
-    radial-gradient(1200px 600px at 50% -200px, rgba(214,180,106,.15), transparent);
-  padding:40px 20px;
-}
-.hero img{max-width:220px;margin-bottom:28px}
-.hero h1{
-  font-family:"Playfair Display",serif;
-  font-size:3.2rem;
-  color:var(--gold);
-  margin:0;
-  letter-spacing:.5px;
-}
-.hero p{
-  margin-top:14px;
-  color:var(--gold-soft);
-  opacity:.95;
-}
+    body{
+      font-family:Inter, sans-serif;
+      background:var(--bg);
+      color:var(--white);
+    }
 
-/* SECTION */
-.section{
-  max-width:1200px;
-  margin:0 auto;
-  padding:90px 20px;
-}
-.section h2{
-  font-family:"Playfair Display",serif;
-  text-align:center;
-  color:var(--gold);
-  font-size:2.4rem;
-  margin-bottom:56px;
-}
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:64px;
+      display:flex;
+      align-items:center;
+      padding:0 20px;
+      background:rgba(7,31,24,.9);
+      z-index:1000;
+    }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:36px;
-}
+    .menu-btn{
+      font-size:26px;
+      color:var(--gold);
+      cursor:pointer;
+    }
 
-/* CARD */
-.card{
-  background:linear-gradient(180deg, var(--emerald-2), var(--emerald));
-  border:1px solid rgba(214,180,106,.35);
-  transition:.35s;
-}
-.card:hover{
-  transform:translateY(-6px);
-  border-color:var(--gold);
-}
-.card img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-}
-.card .meta{
-  padding:22px;
-  text-align:center;
-}
-.card h3{
-  font-family:"Playfair Display",serif;
-  color:var(--gold);
-  margin:0 0 8px;
-}
-.badge{
-  display:inline-block;
-  border:1px solid var(--gold-soft);
-  color:var(--gold-soft);
-  padding:6px 12px;
-  font-size:.75rem;
-  letter-spacing:1px;
-}
+    .logo{
+      margin-left:16px;
+      font-family:"Playfair Display", serif;
+      letter-spacing:3px;
+      color:var(--gold);
+      font-size:18px;
+    }
 
-/* STORY */
-.story{
-  max-width:760px;
-  margin:0 auto;
-  text-align:center;
-  color:var(--gold-soft);
-  line-height:1.9;
-}
+    /* SIDE MENU */
+    .side-menu{
+      position:fixed;
+      top:0;left:-100%;
+      width:85%;
+      max-width:340px;
+      height:100%;
+      background:var(--bg-2);
+      padding:30px 24px;
+      transition:.3s;
+      z-index:2000;
+    }
+    .side-menu.open{left:0}
 
-/* FOOTER */
-footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  text-align:center;
-  padding:40px 20px;
-  color:#d9d9d9;
-  font-size:.85rem;
-}
-.topbar{
-  position:fixed;
-  top:0; left:0;
-  width:100%;
-  height:64px;
-  background:#082a21;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 20px;
-  z-index:1000;
-}
+    .side-menu .close{
+      font-size:22px;
+      color:var(--gold);
+      margin-bottom:30px;
+      cursor:pointer;
+    }
 
-.menu-btn{
-  font-size:26px;
-  color:#d6b46a;
-  cursor:pointer;
-}
+    .side-menu h4{
+      font-family:"Playfair Display", serif;
+      color:var(--gold);
+      margin-top:30px;
+      margin-bottom:12px;
+      font-weight:500;
+    }
 
-.brand{
-  color:#d6b46a;
-  font-family:Playfair Display, serif;
-  letter-spacing:2px;
-}
+    .side-menu a{
+      display:block;
+      color:var(--gold-soft);
+      text-decoration:none;
+      font-size:16px;
+      margin:10px 0;
+    }
 
-.side-menu{
-  position:fixed;
-  top:0;
-  left:-100%;
-  width:80%;
-  height:100%;
-  background:#061f19;
-  padding:30px 20px;
-  transition:.3s;
-  z-index:2000;
-}
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px 60px;
+    }
 
-.side-menu a{
-  display:block;
-  color:#d6b46a;
-  font-size:18px;
-  margin:18px 0;
-  text-decoration:none;
-}
+    .hero h1{
+      font-family:"Playfair Display", serif;
+      font-size:3rem;
+      font-weight:500;
+      letter-spacing:.06em;
+      color:var(--gold);
+    }
 
-.side-menu .close{
-  color:#d6b46a;
-  font-size:22px;
-  margin-bottom:30px;
-  cursor:pointer;
-}
-</style>
+    .hero p{
+      margin-top:16px;
+      color:var(--gold-soft);
+      font-weight:300;
+    }
+
+    /* SECTION */
+    section{
+      padding:100px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    section h2{
+      font-family:"Playfair Display", serif;
+      color:var(--gold);
+      font-weight:500;
+      letter-spacing:.05em;
+      margin-bottom:60px;
+      text-align:center;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:40px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,var(--bg-2),var(--bg));
+      border:1px solid rgba(214,180,106,.3);
+      transition:.3s;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:var(--gold);
+    }
+
+    .card img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+    }
+
+    .card .meta{
+      padding:24px;
+      text-align:center;
+    }
+
+    .card h3{
+      font-family:"Playfair Display", serif;
+      color:var(--gold);
+      font-weight:500;
+      margin-bottom:8px;
+    }
+
+    .badge{
+      font-size:.75rem;
+      color:var(--gold-soft);
+      border:1px solid var(--gold-soft);
+      padding:6px 14px;
+      display:inline-block;
+      letter-spacing:1px;
+    }
+
+    /* STORY */
+    .story{
+      max-width:720px;
+      margin:auto;
+      text-align:center;
+      color:var(--gold-soft);
+      font-weight:300;
+      line-height:1.9;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:50px 20px;
+      border-top:1px solid rgba(255,255,255,.08);
+      text-align:center;
+      color:#d0d0d0;
+      font-size:.85rem;
+    }
+
+    /* OVERLAY */
+    .overlay{
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,.6);
+      display:none;
+      z-index:1500;
+    }
+    .overlay.show{display:block}
+  </style>
 </head>
 
 <body>
-<header class="topbar">
+
+<header>
   <div class="menu-btn" onclick="openMenu()">☰</div>
-  <div class="brand">KYBELE</div>
+  <div class="logo">KYBELE</div>
 </header>
 
-<div id="sideMenu" class="side-menu">
+<div class="side-menu" id="sideMenu">
   <div class="close" onclick="closeMenu()">✕</div>
+
   <a href="#">Yeni</a>
-  <a href="#">Takı</a>
-  <a href="#">Saatler</a>
-  <a href="#">Aksesuarlar</a>
+
+  <h4>Takı</h4>
+  <a href="#">Yüzük</a>
+  <a href="#">Bileklik</a>
+  <a href="#">Kelepçe</a>
+  <a href="#">Kolye</a>
+
+  <h4>Aksesuar</h4>
   <a href="#">Şal</a>
   <a href="#">Eşarp</a>
   <a href="#">Kaşmir</a>
   <a href="#">Pashmina</a>
 </div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
 <section class="hero">
-  <!-- LOGO -->
-  <img src="logo.png" alt="Kybele Accessories Logo"/>
   <h1>Tanrıçanın Dokunuşu</h1>
   <p>Zamansız zarafet, güçlü detaylar</p>
 </section>
 
-<section class="section">
+<section>
   <h2>Koleksiyonlar</h2>
 
   <div class="grid">
     <div class="card">
-      <img src="bileklik.jpg" alt="Bileklik"/>
+      <img src="bileklik.jpg" alt="">
       <div class="meta">
         <h3>Bileklik</h3>
         <span class="badge">YAKINDA</span>
@@ -212,15 +250,7 @@ footer{
     </div>
 
     <div class="card">
-      <img src="kelepce.jpg" alt="Kelepçe"/>
-      <div class="meta">
-        <h3>Kelepçe</h3>
-        <span class="badge">YAKINDA</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="kolye.jpg" alt="Kolye"/>
+      <img src="kolye.jpg" alt="">
       <div class="meta">
         <h3>Kolye</h3>
         <span class="badge">YAKINDA</span>
@@ -228,40 +258,36 @@ footer{
     </div>
 
     <div class="card">
-      <img src="esarpp.jpg" alt="Eşarp"/>
+      <img src="esarpp.jpg" alt="">
       <div class="meta">
         <h3>Eşarp</h3>
         <span class="badge">YAKINDA</span>
       </div>
     </div>
-
-    <div class="card">
-      <img src="sal.jpg" alt="Şal / Pashmina"/>
-      <div class="meta">
-        <h3>Şal & Pashmina</h3>
-        <span class="badge">YAKINDA</span>
-      </div>
-    </div>
   </div>
 </section>
 
-<section class="section">
+<section>
   <div class="story">
     Kybele, doğadan ve kadın gücünden ilham alan,
-    zamansız ve sofistike tasarımlar sunar.
+    sessiz ama güçlü bir zarafet sunar.
   </div>
 </section>
 
 <footer>
-  © 2026 Kybele Accessories
+  © 2026 kybeleaccessories.com.tr
 </footer>
+
 <script>
-function openMenu(){
-  document.getElementById("sideMenu").style.left="0";
-}
-function closeMenu(){
-  document.getElementById("sideMenu").style.left="-100%";
-}
+  function openMenu(){
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("overlay").classList.add("show");
+  }
+  function closeMenu(){
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
 </script>
+
 </body>
 </html>
