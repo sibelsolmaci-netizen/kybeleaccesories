@@ -297,6 +297,24 @@
 .hero p{
   transition: opacity .3s ease, transform .3s ease;
 }
+.brand-title{
+  font-family:"Playfair Display", serif;
+  font-size:4.5rem;
+  letter-spacing:.35em;
+  color:var(--gold);
+  margin-bottom:40px;
+  text-transform:uppercase;
+  transition:opacity .3s ease, transform .3s ease;
+}
+
+.hero-title{
+  font-family:"Playfair Display", serif;
+  font-size:2.4rem;
+  letter-spacing:.18em;
+  color:var(--gold-soft);
+  margin-bottom:16px;
+  transition:opacity .3s ease, transform .3s ease;
+}
 
   </style>
 </head>
@@ -305,7 +323,6 @@
 
 <header>
   <div class="menu-btn" onclick="openMenu()">☰</div>
-  <div class="logo">KYBELE</div>
 </header>
 
 <div class="side-menu" id="sideMenu">
@@ -329,8 +346,9 @@
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <section class="hero">
-  <h1>Tanrıçanın Dokunuşu</h1>
-  <p>Zamansız zarafet, güçlü detaylar</p>
+  <h1 class="brand-title">KYBELE</h1>
+  <h2 class="hero-title">TANRIÇANIN DOKUNUŞU</h2>
+  <p>ZAMANSIZ ZARAFET, GÜÇLÜ DETAYLAR</p>
 </section>
 
 <section>
@@ -393,26 +411,32 @@
     document.getElementById("sideMenu").classList.remove("open");
     document.getElementById("overlay").classList.remove("show");
   }
-    window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    const heroTitle = document.querySelector(".hero h1");
-    const heroText = document.querySelector(".hero p");
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const brand = document.querySelector(".brand-title");
+  const heroTitle = document.querySelector(".hero-title");
+  const heroText = document.querySelector(".hero p");
 
-    const fadeEnd = 300;
+  const fadeEnd = 320;
 
-    let opacity = 1 - scrollY / fadeEnd;
-    opacity = Math.max(opacity, 0);
+  let opacity = 1 - scrollY / fadeEnd;
+  opacity = Math.max(opacity, 0);
 
-    if(heroTitle){
-      heroTitle.style.opacity = opacity;
-      heroTitle.style.transform = `translateY(${scrollY * -0.15}px)`;
-    }
+  if(brand){
+    brand.style.opacity = opacity;
+    brand.style.transform = `translateY(${scrollY * -0.2}px)`;
+  }
 
-    if(heroText){
-      heroText.style.opacity = opacity;
-      heroText.style.transform = `translateY(${scrollY * -0.1}px)`;
-    }
-  });
+  if(heroTitle){
+    heroTitle.style.opacity = opacity;
+    heroTitle.style.transform = `translateY(${scrollY * -0.15}px)`;
+  }
+
+  if(heroText){
+    heroText.style.opacity = opacity;
+    heroText.style.transform = `translateY(${scrollY * -0.1}px)`;
+  }
+});
 
 </script>
 
